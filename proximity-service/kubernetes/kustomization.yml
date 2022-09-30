@@ -1,0 +1,27 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  env: dev
+resources:
+  - base/
+helmCharts:
+  - repo: https://charts.bitnami.com/bitnami
+    name: redis
+    version: 17.3.1
+    releaseName: redis
+    valuesFile: values/redis-cluster.yml
+    namespace: redis-cluster
+  - repo: https://charts.bitnami.com/bitnami
+    name: mysql
+    version: 9.3.4
+    releaseName: mysql
+    valuesFile: values/mysql-cluster.yml
+    namespace: mysql-cluster
+  - name: app
+    releaseName: business
+    valuesFile: values/business.yml
+    namespace: business
+  - name: app
+    releaseName: lbs
+    valuesFile: values/lbs.yml
+    namespace: lbs

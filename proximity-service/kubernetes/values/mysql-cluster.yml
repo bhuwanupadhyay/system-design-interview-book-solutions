@@ -1,0 +1,13 @@
+architecture: replication
+auth:
+  rootPassword: root_pw
+  database: business_db
+  username: business
+  password: business_pw
+  replicationUser: replicator
+  replicationPassword: replicator_pw
+primary:
+  name: master
+secondary:
+  name: replica
+  replicaCount: 2

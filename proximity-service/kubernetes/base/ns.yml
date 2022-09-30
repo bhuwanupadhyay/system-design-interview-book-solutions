@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: redis-cluster
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mysql-cluster
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: business
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: lbs
