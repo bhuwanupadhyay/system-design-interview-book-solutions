@@ -1,0 +1,104 @@
+openapi: 3.0.3
+info:
+  description: |
+    Business Service: to manage client business information.
+  title: Proximity Service - Business
+  version: 1.0.0
+servers:
+- url: https://api.proximity-service.local
+paths:
+  /v1/businesses:
+    post:
+      description: |
+        Add a business
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        description: new business object
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                description: business object
+                type: object
+          description: Ok
+      x-content-type: application/json
+      x-accepts: application/json
+  /v1/businesses/:id:
+    delete:
+      description: |
+        Delete a business
+      parameters:
+      - description: Business id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                description: success response
+                type: object
+          description: Ok
+      x-accepts: application/json
+    get:
+      description: |
+        Return detailed information about a business
+      parameters:
+      - description: Business id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                description: business object
+                type: object
+          description: Ok
+      x-accepts: application/json
+    put:
+      description: |
+        Update details of a business
+      parameters:
+      - description: Business id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        description: updated on business object
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                description: business object
+                type: object
+          description: Ok
+      x-content-type: application/json
+      x-accepts: application/json
+components:
+  schemas: {}

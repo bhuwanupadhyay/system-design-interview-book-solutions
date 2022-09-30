@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  description: |
+    Location Based Search [LBS] Service: is used to discover nearby places such as restaurants, hotels, theaters, museums, etc. Example: Yelp or near by me on Google Map
+  title: Proximity Service - Location Based Search
+  version: 1.0.0
+servers:
+- url: https://api.proximity-service.local
+paths:
+  /v1/search/nearby:
+    get:
+      description: |
+        Returns businesses based on certain search criteria. In real-life application, search result are usually paginated.
+      parameters:
+      - description: Latitude of a given location
+        explode: true
+        in: query
+        name: latitude
+        required: true
+        schema:
+          type: number
+        style: form
+      - description: Longitude of a given location
+        explode: true
+        in: query
+        name: longitude
+        required: true
+        schema:
+          type: number
+        style: form
+      - description: "Search radius [Optional. Default is 500 meters (about 3 miles)]"
+        explode: true
+        in: query
+        name: radius
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          description: List of business objects
+      x-accepts: application/json
+components:
+  schemas: {}
