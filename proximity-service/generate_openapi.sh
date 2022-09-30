@@ -29,6 +29,7 @@ find ./ -name '.openapi-generator-ignore' -print0 | xargs -0 rm -rf
 find ./ -name 'README.md' -print0 | xargs -0 rm -rf
 find ./ -name 'openapitools.json' -print0 | xargs -0 rm -rf
 find ./ -name 'OpenApiGeneratorApplication.java' -print0 | xargs -0 rm -rf
+find ./ -name 'OpenApiGeneratorApplicationTests.java' -print0 | xargs -0 rm -rf
 find ./ -name 'ApiUtil.java' -print0 | xargs -0 rm -rf
 
 # Remove: directory

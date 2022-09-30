@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-09-30T11:25:59.555712678-05:00[America/Chicago]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-09-30T11:30:08.181502099-05:00[America/Chicago]")
 @Validated
 @Tag(name = "v1", description = "the v1 API")
 @RequestMapping("${openapi.proximityServiceLocationBasedSearch.base-path:}")
