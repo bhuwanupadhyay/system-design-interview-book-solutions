@@ -1,0 +1,1 @@
+skaffold run --default-repo k3d-registry:12345

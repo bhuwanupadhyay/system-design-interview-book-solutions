@@ -12,4 +12,6 @@ build:
     envTemplate:
       template: "{{.IMAGE_NAME}}:latest"
 deploy:
-  kustomize: {}
+  kustomize:
+    buildArgs:
+      - --enable-helm

@@ -1,1 +1,0 @@
-k3d kubeconfig merge proximity --kubeconfig-switch-context
